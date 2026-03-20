@@ -1,0 +1,186 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 6%;
+  width: min(78vw, 520px);
+  height: 120px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.26) 0%,
+    rgba(0, 0, 0, 0.12) 45%,
+    rgba(0, 0, 0, 0) 72%
+  );
+  filter: blur(10px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── GRADIENT BACKGROUND ── */
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    170deg,
+    #f0ece4 0%,
+    #f0ece4 35%,
+    #f5c49a 62%,
+    #e8380d 100%
+  );
+  z-index: 0;
+}
+
+/* ── PHOTO ── */
+.heroPhotoWrap {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 70%;
+  z-index: 111;
+  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+}
+
+.heroPhoto {
+  filter: none;
+  object-fit: contain !important;
+  object-position: bottom center !important;
+}
+
+/* ── TITLE — top left, over photo ── */
+.heroTitle {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  right: 20px;
+  z-index: 2;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(38px, 10vw, 90px);
+  font-weight: 900;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  line-height: 0.92;
+}
+
+.accent {
+  color: #e8380d;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 900;
+  letter-spacing: -3px;
+}
+
+/* ── BOTTOM ROW — sub left, scroll right ── */
+.heroBottom {
+  position: absolute;
+  bottom: 32px;
+  left: 20px;
+  right: 20px;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  z-index: 112;
+}
+
+.heroSub {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1a1a1a;
+  margin: 0;
+  max-width: 220px;
+  font-weight: 400;
+}
+
+.scrollHint {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #1a1a1a;
+  margin: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── TABLET ── */
+@media (min-width: 600px) {
+  .heroTitle {
+    top: 90px;
+    left: 28px;
+    right: 28px;
+  }
+
+  .heroPhotoWrap {
+    width: 70%;
+    height: 72%;
+  }
+
+  .heroBottom {
+    left: 28px;
+    right: 28px;
+    bottom: 40px;
+  }
+
+  .heroSub {
+    font-size: 16px;
+    max-width: 280px;
+  }
+
+  .scrollHint {
+    font-size: 14px;
+  }
+}
+
+/* ── DESKTOP ── */
+@media (min-width: 1024px) {
+  .heroTitle {
+    top: 30%;
+    transform: translateY(-30%);
+    font-size: clamp(80px, 8vw, 140px);
+  }
+
+  .heroPhotoWrap {
+    width: 44%;
+    height: 88%;
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    left: auto;
+    transform: none;
+    right: -50px;
+  }
+
+  .hero::after {
+    left: auto;
+    right: -30px;
+    transform: none;
+    width: 42%;
+    bottom: 5%;
+  }
+
+  .heroBottom {
+    left: 48px;
+    right: 48px;
+    bottom: 48px;
+  }
+
+  .heroSub {
+    font-size: 18px;
+    max-width: 340px;
+  }
+
+  .scrollHint {
+    font-size: 15px;
+  }
+}

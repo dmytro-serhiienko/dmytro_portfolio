@@ -1,0 +1,54 @@
+body {
+  background: #ebe6dd;
+  color: #000000;
+  font-family: var(--font-unbounded), sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-unbounded), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Для заголовків теж Unbounded, але можна зробити їх жирнішими */
+  font-family: var(--font-unbounded), sans-serif;
+  font-weight: 700; /* Жирний заголовок */
+}
+
+image {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
