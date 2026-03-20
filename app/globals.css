@@ -1,7 +1,7 @@
 body {
   background: #ebe6dd;
   color: #000000;
-  font-family: var(--font-unbounded), sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -23,7 +23,7 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-  font-family: var(--font-unbounded), sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
 }
 
 h1,
