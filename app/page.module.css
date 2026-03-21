@@ -23,21 +23,19 @@
   pointer-events: none;
 }
 
-/* ── GRADIENT BACKGROUND ── */
 .heroBg {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    170deg,
-    #f0ece4 0%,
-    #f0ece4 35%,
-    #f5c49a 62%,
-    #e8380d 100%
+    0deg,
+    #e8380d 0%,
+    #f5c49a 45%,
+    #f0ece4 80%,
+    #f0ece4 100%
   );
   z-index: 0;
 }
 
-/* ── PHOTO ── */
 .heroPhotoWrap {
   position: absolute;
   bottom: 0;
@@ -56,7 +54,6 @@
   object-position: bottom center !important;
 }
 
-/* ── TITLE — top left, over photo ── */
 .heroTitle {
   position: absolute;
   top: 80px;
@@ -81,7 +78,6 @@
   letter-spacing: -3px;
 }
 
-/* ── BOTTOM ROW — sub left, scroll right ── */
 .heroBottom {
   position: absolute;
   bottom: 32px;
@@ -114,7 +110,6 @@
   flex-shrink: 0;
 }
 
-/* ── TABLET ── */
 @media (min-width: 600px) {
   .heroTitle {
     top: 90px;
@@ -143,7 +138,6 @@
   }
 }
 
-/* ── DESKTOP ── */
 @media (min-width: 1024px) {
   .heroTitle {
     top: 30%;

@@ -1,0 +1,87 @@
+.modalFullPage {
+  position: fixed;
+  inset: 0;
+  background-color: #f0ece4;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 100px 24px 60px;
+  overflow-y: auto;
+}
+
+.modalContent {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.closeBtn {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10001;
+  color: #1a1a1a;
+}
+
+.contactTitle {
+  font-family: var(--font-bebasneue);
+  font-size: clamp(60px, 12vw, 260px);
+  text-transform: uppercase;
+  line-height: 0.8;
+  margin-bottom: 50px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.formElement {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.labelTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-unbounded);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.inUsername,
+.inUsertext {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 12px 0;
+  font-size: clamp(20px, 4vw, 32px);
+  outline: none;
+  width: 100%;
+}
+
+.inUsername:focus,
+.inUsertext:focus {
+  border-bottom-color: #e8380d;
+}
+
+.starRequired {
+  color: #e8380d;
+}
+
+.contactBtn {
+  background-color: #e8380d;
+  color: white;
+  padding: 20px 60px;
+  font-family: var(--font-bebasneue);
+  font-size: 32px;
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+}

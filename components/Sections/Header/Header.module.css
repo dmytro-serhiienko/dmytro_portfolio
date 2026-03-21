@@ -136,7 +136,6 @@
   border-radius: 4px;
 }
 
-/*  TABLET & DESKTOP  */
 @media (min-width: 768px) {
   .header {
     padding: 24px 40px;

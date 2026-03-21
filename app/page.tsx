@@ -18,13 +18,11 @@ export default function Home() {
         />
       </div>
 
-      {/* ЗАГОЛОВОК — зверху поверх фото */}
       <h1 className={styles.heroTitle}>
         CREATING THE DIGITAL FACE OF
         <span className={styles.accent}>&ldquo;SUCCESS!&rdquo;</span>
       </h1>
 
-      {/* НИЖНІЙ РЯД — підпис зліва, scroll hint справа */}
       <div className={styles.heroBottom}>
         <p className={styles.heroSub}>
           Your digital status speaks for you. My job is to make it flawless.

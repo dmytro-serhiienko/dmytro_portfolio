@@ -2,11 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import styles from "./Header.module.css";
+import { ModalContact } from "../../ModalContact/ModalContact";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <>
@@ -16,17 +19,18 @@ export default function Header() {
         </Link>
 
         <nav className={styles.desktopNav}>
-          <Link href="#portfolio">ABOUT</Link>
-          <Link href="#process">PORTFOLIO</Link>
-          <Link href="#about">CONTACT</Link>
+          <Link href="#about">ABOUT</Link>
+          <Link href="#portfolio">PORTFOLIO</Link>
+          <Link href="#contact">CONTACT</Link>
         </nav>
 
-        <Link
-          href="#contact"
+        <button
+          onClick={() => setIsModalOpen(true)}
           className={`${styles.ctaBtn} ${styles.desktopCta}`}
+          type="button"
         >
           <span>LET&apos;S TALK</span>
-        </Link>
+        </button>
 
         <button
           className={styles.menuBtn}
@@ -45,25 +49,30 @@ export default function Header() {
       {menuOpen && (
         <div className={styles.mobileMenu}>
           <nav className={styles.mobileNav}>
-            <Link href="#portfolio" onClick={() => setMenuOpen(false)}>
-              PORTFOLIO
-            </Link>
-            <Link href="#process" onClick={() => setMenuOpen(false)}>
-              MY PROCESS
-            </Link>
             <Link href="#about" onClick={() => setMenuOpen(false)}>
               ABOUT
             </Link>
-            <Link
-              href="#contact"
-              onClick={() => setMenuOpen(false)}
+            <Link href="#portfolio" onClick={() => setMenuOpen(false)}>
+              PORTFOLIO
+            </Link>
+            <Link href="#contact" onClick={() => setMenuOpen(false)}>
+              CONTACT
+            </Link>
+            <button
+              onClick={() => {
+                setMenuOpen(false);
+                setIsModalOpen(true);
+              }}
               className={styles.mobileCta}
+              type="button"
             >
               LET&apos;S TALK
-            </Link>
+            </button>
           </nav>
         </div>
       )}
+
+      {isModalOpen && <ModalContact onClose={closeModal} />}
     </>
   );
 }

@@ -1,7 +1,12 @@
+"use client";
+
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "../components/Sections/Header/Header";
 import { About } from "@/components/Sections/About/About";
+import { Contacts } from "@/components/Sections/Contacts/Contacts";
+import { Footer } from "@/components/Sections/Footer/Footer";
+import { SmoothScroll } from "./ui/SmoothScroll/SmoothScroll";
 
 const unbounded = localFont({
   src: "../public/fonts/Unbounded-VariableFont_wght.ttf",
@@ -24,9 +29,9 @@ const montserrat = localFont({
   display: "swap",
 });
 
-const lexend = localFont({
-  src: "../public/fonts/Lexend-VariableFont_wght.ttf",
-  variable: "--font-lexend",
+const bebasneue = localFont({
+  src: "../public/fonts/BebasNeue-Regular.ttf",
+  variable: "--font-bebasneue",
   display: "swap",
 });
 
@@ -38,12 +43,16 @@ export default function RootLayout({
   return (
     <html
       lang="uk"
-      className={`${unbounded.className} ${unbounded.variable} ${lexend.variable} ${montserrat.variable} h-full antialiased`}
+      className={`${unbounded.className} ${unbounded.variable}  ${montserrat.variable} ${bebasneue.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Header />
-        <main className="flex-grow">{children}</main>
-        <About />
+        <SmoothScroll>
+          <Header />
+          <main className="flex-grow">{children}</main>
+          <About />
+          <Contacts />
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );
