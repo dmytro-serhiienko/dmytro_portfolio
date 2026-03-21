@@ -8,7 +8,7 @@ import {
 import { useState } from "react";
 import Link from "next/link";
 import styles from "./Header.module.css";
-import { ModalContact } from "../../ModalContact/ModalContact";
+import { ModalContact } from "../Contacts/ModalContact/ModalContact";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);

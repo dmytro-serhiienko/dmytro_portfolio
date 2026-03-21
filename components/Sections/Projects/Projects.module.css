@@ -1,0 +1,150 @@
+.projectsSection {
+  padding: 80px 20px;
+}
+
+.sectionTitle {
+  font-family: var(--font-bebasneue);
+  font-size: clamp(60px, 10vw, 120px);
+  margin-bottom: 60px;
+  text-transform: uppercase;
+}
+
+/* Мобільна версія: все в одну колонку */
+.projectsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.projectCard {
+  cursor: pointer;
+  width: 100%;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5; /* Вертикальні картки як на малюнку */
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #ddd;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Hover ефект */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(232, 56, 13, 0.8); /* Твій помаранчевий */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay span {
+  color: white;
+  font-family: var(--font-unbounded);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.projectCard:hover .overlay {
+  opacity: 1;
+}
+
+.projectCard:hover .image {
+  transform: scale(1.05);
+}
+
+.projectInfo {
+  margin-top: 15px;
+}
+
+.projectTitle {
+  font-family: var(--font-unbounded);
+  font-size: 20px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* ДЕЙСТОП: Асиметрична сітка за малюнком */
+@media (min-width: 1024px) {
+  .projectsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px 40px;
+    align-items: start;
+  }
+
+  /* Зміщення правої колонки вниз (ефект як на малюнку) */
+  .projectCard:nth-child(even) {
+    margin-top: 100px;
+  }
+
+  /* Перша картка в лівій колонці без відступу, а друга з невеликим */
+  .projectCard:nth-child(odd) {
+    margin-top: 0;
+  }
+}
+
+/* Fullscreen modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: #f0ece4;
+  z-index: 9999;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modalContent {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 80px 24px 60px;
+  box-sizing: border-box;
+}
+
+.closeBtn {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 48px;
+  line-height: 1;
+  color: #1a1a1a;
+  z-index: 10000;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.closeBtn:hover {
+  transform: rotate(90deg);
+  color: #e8380d;
+}
+
+.modalTitle {
+  font-family: var(--font-bebasneue);
+  font-size: clamp(40px, 8vw, 100px);
+  margin: 0 0 32px;
+  color: #1a1a1a;
+}
+
+.projectDetails {
+  width: 100%;
+}

@@ -4,8 +4,10 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "../components/Sections/Header/Header";
 import { About } from "@/components/Sections/About/About";
+import { Projects } from "@/components/Sections/Projects/Projects";
 import { Contacts } from "@/components/Sections/Contacts/Contacts";
 import { Footer } from "@/components/Sections/Footer/Footer";
+
 import { SmoothScroll } from "./ui/SmoothScroll/SmoothScroll";
 import { Toaster } from "sonner";
 
@@ -51,6 +53,7 @@ export default function RootLayout({
           <Header />
           <main className="flex-grow">{children}</main>
           <About />
+          <Projects />
           <Contacts />
           <Footer />
           <Toaster richColors position="bottom-right" />

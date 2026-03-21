@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./Contacts.module.css";
 import { useState } from "react";
-import { ModalContact } from "../../ModalContact/ModalContact";
+import { ModalContact } from "./ModalContact/ModalContact";
 
 export function Contacts() {
   const [isModalOpen, setIsModalOpen] = useState(false);
