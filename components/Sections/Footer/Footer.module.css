@@ -63,18 +63,6 @@
   letter-spacing: -1px;
 }
 
-.footerCopyWrap {
-  width: 100%;
-  text-align: center;
-  padding: 20px 0;
-}
-
-.copyright {
-  font-family: var(--font-monserrat), sans-serif;
-  font-size: 12px;
-  opacity: 0.6;
-}
-
 @media (min-width: 1024px) {
   .footerContainer {
     min-height: 100vh;
@@ -100,9 +88,5 @@
 
   .footerName {
     font-size: clamp(100px, 16vw, 290px);
-  }
-
-  .footerCopyWrap {
-    padding-bottom: 20px;
   }
 }

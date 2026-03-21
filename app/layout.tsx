@@ -7,6 +7,7 @@ import { About } from "@/components/Sections/About/About";
 import { Contacts } from "@/components/Sections/Contacts/Contacts";
 import { Footer } from "@/components/Sections/Footer/Footer";
 import { SmoothScroll } from "./ui/SmoothScroll/SmoothScroll";
+import { Toaster } from "sonner";
 
 const unbounded = localFont({
   src: "../public/fonts/Unbounded-VariableFont_wght.ttf",
@@ -52,6 +53,7 @@ export default function RootLayout({
           <About />
           <Contacts />
           <Footer />
+          <Toaster richColors position="bottom-right" />
         </SmoothScroll>
       </body>
     </html>

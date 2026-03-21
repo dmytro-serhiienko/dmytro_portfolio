@@ -2,11 +2,11 @@
   position: fixed;
   inset: 0;
   background-color: #f0ece4;
-  z-index: 9999;
+  z-index: 10000;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding: 100px 24px 60px;
+  align-items: center;
+  padding: 60px 16px;
   overflow-y: auto;
 }
 
@@ -15,33 +15,37 @@
   max-width: 800px;
   display: flex;
   flex-direction: column;
+  padding: 40px 0;
 }
 
 .closeBtn {
   position: fixed;
-  top: 30px;
-  right: 30px;
+  top: 20px;
+  right: 15px;
   background: none;
   border: none;
   cursor: pointer;
   z-index: 10001;
   color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contactTitle {
   font-family: var(--font-bebasneue);
-  font-size: clamp(60px, 12vw, 260px);
+  font-size: clamp(50px, 12vw, 120px);
   text-transform: uppercase;
-  line-height: 0.8;
-  margin-bottom: 50px;
+  line-height: 0.9;
+  margin-bottom: 25px;
   text-align: center;
-  pointer-events: none;
+  color: #1a1a1a;
 }
 
 .formElement {
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 20px;
 }
 
 .labelTitle {
@@ -49,39 +53,84 @@
   flex-direction: row;
   align-items: center;
   gap: 6px;
-  font-family: var(--font-unbounded);
-  font-weight: 700;
+  font-family: var(--font-montserrat);
+  font-weight: 600;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 11px;
+  letter-spacing: 0.05em;
 }
 
 .inUsername,
 .inUsertext {
   background: transparent;
   border: none;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  padding: 12px 0;
-  font-size: clamp(20px, 4vw, 32px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 8px 0;
+  font-size: 18px;
   outline: none;
   width: 100%;
+  color: #1a1a1a;
 }
 
 .inUsername:focus,
 .inUsertext:focus {
-  border-bottom-color: #e8380d;
+  border-bottom: 2px solid #e8380d;
 }
 
-.starRequired {
-  color: #e8380d;
+.inUsertext {
+  min-height: 80px;
+  resize: none;
 }
 
 .contactBtn {
   background-color: #e8380d;
   color: white;
-  padding: 20px 60px;
+  padding: 16px;
+  width: 100%;
   font-family: var(--font-bebasneue);
-  font-size: 32px;
+  font-size: 24px;
   border: none;
   cursor: pointer;
-  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.inUsername::placeholder,
+.inUsertext::placeholder {
+  font-family: var(--font-montserrat);
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .modalFullPage {
+    padding: 40px;
+    align-items: flex-start;
+  }
+
+  .contactTitle {
+    font-size: 140px;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  .formElement {
+    gap: 30px;
+  }
+
+  .labelTitle {
+    font-size: 13px;
+  }
+
+  .inUsername,
+  .inUsertext {
+    font-size: 24px;
+    padding: 12px 0;
+  }
+
+  .contactBtn {
+    width: auto;
+    padding: 18px 80px;
+    font-size: 28px;
+    align-self: flex-start;
+  }
 }

@@ -36,13 +36,6 @@ export function Footer() {
         <div className={styles.footerNameWrap}>
           <p className={styles.footerName}>DMYTRO SERGIIENKO</p>
         </div>
-
-        {/* copy */}
-        <div className={styles.footerCopyWrap}>
-          <p className={styles.copyright}>
-            &copy; {new Date().getFullYear()} Dmytro Sergiienko
-          </p>
-        </div>
       </div>
     </footer>
   );
