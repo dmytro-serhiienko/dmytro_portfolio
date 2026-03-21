@@ -9,7 +9,7 @@ export default function Home() {
       {/* ФОТО */}
       <div className={styles.heroPhotoWrap}>
         <Image
-          src="/img/hero/111.png"
+          src="/img/hero/hero.png"
           alt="Your name"
           fill
           priority
