@@ -31,15 +31,31 @@ export default function Project5Content() {
       <div className={style.overviewRight}>
         <div className={style.overviewBlock}>
           <h3 className={style.blockTitle}>Challenge</h3>
-          <p className={style.blockText}>Coming soon...</p>
+          <p className={style.blockText}>
+            Build a modern, fully responsive e-commerce landing page for premium
+            watches — showcasing new collections, featured products, pricing,
+            cart functionality, and strong purchase drivers.
+          </p>
         </div>
         <div className={style.overviewBlock}>
           <h3 className={style.blockTitle}>Solution</h3>
-          <p className={style.blockText}>Coming soon...</p>
+          <p className={style.blockText}>
+            Created a complete single-page site: hero for B720 collection,
+            Featured/New Arrivals/Products grids with item cards, dynamic cart,
+            `Add to Cart` buttons, testimonials, `Our Story` section, and
+            newsletter signup. Mobile-first HTML + CSS + JS, clean layout,
+            intuitive UX, powerful CTAs.
+          </p>
         </div>
         <div className={style.overviewBlock}>
           <h3 className={style.blockTitle}>Results</h3>
-          <p className={style.blockText}>Coming soon...</p>
+          <p className={style.blockText}>
+            Delivered a sleek, fast-loading, device-agnostic watch store landing
+            that instantly highlights assortment, prices, reviews, and drives
+            add-to-cart/subscribe actions. Highlights strong skills in
+            responsive e-commerce design, product presentation, cart UX, and
+            conversion-oriented frontend.
+          </p>
         </div>
       </div>
     </div>

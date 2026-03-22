@@ -4,7 +4,6 @@ import style from "../ProjectModal.module.css";
 export default function Project1Content() {
   return (
     <div className={style.projectOverview}>
-      {/* ── LEFT: title + links ── */}
       <div className={style.overviewLeft}>
         <h2 className={style.overviewTitle}>
           Project
@@ -30,34 +29,25 @@ export default function Project1Content() {
         </div>
       </div>
 
-      {/* ── RIGHT: blocks ── */}
       <div className={style.overviewRight}>
         <div className={style.overviewBlock}>
           <h3 className={style.blockTitle}>Challenge</h3>
           <p className={style.blockText}>
-            This project is a comprehensive web application designed to provide
-            users with an intuitive interface for managing their tasks and
-            projects. It features a sleek and modern design, utilizing the
-            latest technologies to ensure a seamless user experience.
+            Real commercial project in progress. Case study dropping soon!
           </p>
         </div>
         <div className={style.overviewBlock}>
           <h3 className={style.blockTitle}>Solution</h3>
           <p className={style.blockText}>
-            The solution involved developing a robust backend with a scalable
-            architecture, ensuring data integrity and security. The frontend was
-            crafted with a focus on user experience, incorporating responsive
-            design principles and interactive elements to engage users
-            effectively.
+            Business web application (under NDA). Full case with tech stack, my
+            contributions & results coming soon.
           </p>
         </div>
         <div className={style.overviewBlock}>
           <h3 className={style.blockTitle}>Results</h3>
           <p className={style.blockText}>
-            The project successfully streamlined task management for users,
-            enhancing productivity and collaboration. Feedback from early
-            adopters highlighted the intuitive interface and seamless
-            performance as key strengths of the application.
+            Production-grade commercial web app. Details to be added post-launch
+            / upon client approval (NDA in place).
           </p>
         </div>
       </div>

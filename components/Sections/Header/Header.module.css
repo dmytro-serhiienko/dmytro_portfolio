@@ -15,7 +15,7 @@
 }
 
 .logoText {
-  font-family: var(--font-display);
+  font-family: var(--font-unbounded);
   font-size: 28px;
   font-weight: 900;
   color: #1a1a1a;

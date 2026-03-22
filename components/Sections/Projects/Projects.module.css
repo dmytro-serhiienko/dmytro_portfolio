@@ -4,12 +4,11 @@
 
 .sectionTitle {
   font-family: var(--font-bebasneue);
-  font-size: clamp(60px, 10vw, 120px);
+  font-size: clamp(60px, 12vw, 330px);
   margin-bottom: 60px;
   text-transform: uppercase;
 }
 
-/* Мобільна версія: все в одну колонку */
 .projectsGrid {
   display: flex;
   flex-direction: column;
@@ -24,7 +23,8 @@
 .imageWrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5; /* Вертикальні картки як на малюнку */
+  height: 500px;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 20px;
   background-color: #ddd;
@@ -37,14 +37,13 @@
   transition: transform 0.6s ease;
 }
 
-/* Hover ефект */
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(232, 56, 13, 0.8); /* Твій помаранчевий */
+  background: rgba(230, 227, 227, 0.8); 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,7 +52,7 @@
 }
 
 .overlay span {
-  color: white;
+  color: rgb(0, 0, 0);
   font-family: var(--font-unbounded);
   font-weight: bold;
   text-transform: uppercase;
@@ -79,7 +78,6 @@
   text-transform: uppercase;
 }
 
-/* ДЕЙСТОП: Асиметрична сітка за малюнком */
 @media (min-width: 1024px) {
   .projectsGrid {
     display: grid;
@@ -88,18 +86,15 @@
     align-items: start;
   }
 
-  /* Зміщення правої колонки вниз (ефект як на малюнку) */
   .projectCard:nth-child(even) {
     margin-top: 100px;
   }
 
-  /* Перша картка в лівій колонці без відступу, а друга з невеликим */
   .projectCard:nth-child(odd) {
     margin-top: 0;
   }
 }
 
-/* Fullscreen modal */
 .modalOverlay {
   position: fixed;
   inset: 0;

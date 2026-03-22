@@ -7,7 +7,7 @@ export default function Project2Content() {
       {/* ── LEFT: title + links ── */}
       <div className={style.overviewLeft}>
         <h2 className={style.overviewTitle}>
-          Project
+          Project (Fried Chicken Landing Page)
           <span>Overview</span>
         </h2>
         <div className={style.linksRow}>
@@ -35,31 +35,27 @@ export default function Project2Content() {
         <div className={style.overviewBlock}>
           <h3 className={style.blockTitle}>Challenge</h3>
           <p className={style.blockText}>
-            I wanted to build an attractive and mouth-watering website for a
-            fictional fried chicken restaurant. The main goal was to create a
-            landing page that feels delicious, looks modern, and works smoothly
-            on mobile devices — all while using only basic technologies, since
-            Iʼm just starting my journey in web development.
+            Build a mouth-watering, perfectly responsive landing page for fried
+            chicken that instantly conveys taste & craving, drives orders fast,
+            while keeping code clean, performant and maintainable.
           </p>
         </div>
         <div className={style.overviewBlock}>
           <h3 className={style.blockTitle}>Solution</h3>
           <p className={style.blockText}>
-            I developed a fully responsive one-page website using HTML5, CSS3
-            (Flexbox + Grid + CSS variables), and a small amount of vanilla
-            JavaScript. I added smooth scroll animations with the ScrollReveal
-            library, a mobile-friendly side menu, a sticky header with active
-            link highlighting, and a pleasant dark/light mode design.
+            Crafted a modern one-page site featuring a bold hero, authentic
+            family recipe story (since 1990), priced menu highlights and strong
+            CTAs. Used pure HTML + CSS with mobile-first approach, flawless
+            responsiveness and thoughtful UX to maximize conversion.
           </p>
         </div>
         <div className={style.overviewBlock}>
           <h3 className={style.blockTitle}>Results</h3>
           <p className={style.blockText}>
-            The result is a clean, tasty, and modern landing page that looks
-            great on every device. The site showcases essential
-            beginner-to-intermediate skills: semantic HTML markup, full
-            responsiveness, animation handling without heavy frameworks, proper
-            project structure, and easy deployment on GitHub Pages.
+            Delivered a visually delicious, technically flawless website that
+            looks stunning on every device, loads lightning-fast and guides
+            users straight to ordering. Showcases strong skills in responsive
+            design, clean semantic code and user-centered development.
           </p>
         </div>
       </div>

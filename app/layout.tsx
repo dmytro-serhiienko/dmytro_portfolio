@@ -47,6 +47,7 @@ export default function RootLayout({
     <html
       lang="uk"
       className={`${unbounded.className} ${unbounded.variable}  ${montserrat.variable} ${bebasneue.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
         <SmoothScroll>

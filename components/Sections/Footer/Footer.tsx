@@ -9,13 +9,13 @@ export function Footer() {
           {/* navi */}
           <div className={styles.footerNaviWrap}>
             <nav className={styles.footerNavi}>
-              <Link className={styles.footerNaviLink} href="#portfolio">
+              <Link className={styles.footerNaviLink} href="#about">
                 ABOUT
               </Link>
-              <Link className={styles.footerNaviLink} href="#process">
+              <Link className={styles.footerNaviLink} href="#projects">
                 PORTFOLIO
               </Link>
-              <Link className={styles.footerNaviLink} href="#about">
+              <Link className={styles.footerNaviLink} href="#contact">
                 CONTACT
               </Link>
             </nav>
@@ -23,10 +23,20 @@ export function Footer() {
 
           {/* social */}
           <div className={styles.footerSocialWrap}>
-            <Link className={styles.footerSocialLink} href="#">
+            <Link
+              className={styles.footerSocialLink}
+              href="https://github.com/dmytro-serhiienko"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               GitHub
             </Link>
-            <Link className={styles.footerSocialLink} href="#">
+            <Link
+              className={styles.footerSocialLink}
+              href="https://www.linkedin.com/in/dmytro-serhienko"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               LinkedIn
             </Link>
           </div>

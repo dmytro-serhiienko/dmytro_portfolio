@@ -30,6 +30,16 @@ export default function Header() {
 
   const closeModal = () => setIsModalOpen(false);
 
+  const scrollToTop = (e: React.MouseEvent) => {
+    if (window.location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <>
       {/* header на motion.header */}
@@ -42,13 +52,13 @@ export default function Header() {
         transition={{ duration: 0.35, ease: "easeInOut" }}
         className={styles.header}
       >
-        <Link href="/" className={styles.logo}>
+        <Link href="/" className={styles.logo} onClick={scrollToTop}>
           <span className={styles.logoText}>DS</span>
         </Link>
 
         <nav className={styles.desktopNav}>
           <Link href="#about">ABOUT</Link>
-          <Link href="#portfolio">PORTFOLIO</Link>
+          <Link href="#projects">PORTFOLIO</Link>
           <Link href="#contact">CONTACT</Link>
         </nav>
 
@@ -86,7 +96,7 @@ export default function Header() {
               <Link href="#about" onClick={() => setMenuOpen(false)}>
                 ABOUT
               </Link>
-              <Link href="#portfolio" onClick={() => setMenuOpen(false)}>
+              <Link href="#projects" onClick={() => setMenuOpen(false)}>
                 PORTFOLIO
               </Link>
               <Link href="#contact" onClick={() => setMenuOpen(false)}>
