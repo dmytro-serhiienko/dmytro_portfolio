@@ -3,11 +3,12 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import style from "./Projects.module.css";
-import Project1Content from "./ProjectsModal/Project_1/Project_1";
-import Project2Content from "./ProjectsModal/Project_2/Project_2";
-import Project3Content from "./ProjectsModal/Project_3/Project_3";
-import Project4Content from "./ProjectsModal/Project_4/Project_4";
-import Project5Content from "./ProjectsModal/Project_5/Project_5";
+import SecretProject from "./ProjectsModal/SecretProject/SecretProject";
+import ProjectChicken from "./ProjectsModal/Chicken/Chicken";
+import ProjectMojito from "./ProjectsModal/Mojito/Mojito";
+import ProjectArtistsHub from "./ProjectsModal/ArtistsHub/ArtistsHub";
+import ProjectWatch from "./ProjectsModal/Watch/Watch";
+import ProjectAranciy from "./ProjectsModal/Aranciy/Aranciy";
 
 interface Project {
   id: number;
@@ -22,41 +23,48 @@ const projectsData = [
     id: 1,
     title: "Commercial Web Application",
     category: "Scalable business solution currently under active development",
-    img: "/img/projects/project-1/1.png",
-    component: <Project1Content />,
+    img: "/img/projects/secret/secret.png",
+    component: <SecretProject />,
   },
   {
     id: 2,
+    title: "Premium Portfolio for an Event Host",
+    category: "Showcasing the best events with a premium portfolio",
+    img: "/img/projects/aranciy/aranciy.png",
+    component: <ProjectAranciy />,
+  },
+  {
+    id: 3,
     title: "Food Delivery Platform",
     category: "Full-featured food delivery app with real-time ordering system",
     img: "/img/projects/project-2/2.png",
-    component: <Project2Content />,
-  },
-
-  {
-    id: 3,
-    title: "Interactive Bar Experience",
-    category: "Interactive bar landing page with dynamic drink showcase",
-    img: "/img/projects/project-3/3.png",
-    component: <Project3Content />,
+    component: <ProjectChicken />,
   },
 
   {
     id: 4,
-    title: "Music Community Platform",
-    category:
-      "Music discovery platform connecting independent artists with listeners",
-    img: "/img/projects/project-4/4.png",
-    component: <Project4Content />,
+    title: "Interactive Bar Experience",
+    category: "Interactive bar landing page with dynamic drink showcase",
+    img: "/img/projects/project-3/3.png",
+    component: <ProjectMojito />,
   },
 
   {
     id: 5,
+    title: "Music Community Platform",
+    category:
+      "Music discovery platform connecting independent artists with listeners",
+    img: "/img/projects/project-4/4.png",
+    component: <ProjectArtistsHub />,
+  },
+
+  {
+    id: 6,
     title: "Luxury Watch E-commerce",
     category:
       "Premium watch store with integrated payment gateway and admin panel",
     img: "/img/projects/project-5/5.png",
-    component: <Project5Content />,
+    component: <ProjectWatch />,
   },
   // ... інші проекти
 ];

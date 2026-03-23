@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Formik, Form, Field } from "formik";
-import * as Yup from "yup"; // Імпортуємо Yup
-import { toast } from "sonner"; // Імпортуємо toast
+import * as Yup from "yup";
+import { toast } from "sonner";
 import style from "./ModalContact.module.css";
 import { useId, useEffect } from "react";
 import { IoIosClose } from "react-icons/io";
@@ -80,11 +80,30 @@ export function ModalContact({ onClose }: ModalProps) {
           validationSchema={ContactSchema}
           validateOnBlur={false}
           validateOnChange={false}
-          onSubmit={(values, { resetForm }) => {
-            console.log(values);
-            toast.success("Message sent successfully!");
-            resetForm();
-            onClose();
+          onSubmit={async (values, { resetForm, setSubmitting }) => {
+            try {
+              const res = await fetch("/api/nodemailer", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  name: values.username,
+                  email: values.usermail,
+                  message: values.usertext,
+                }),
+              });
+              const data = await res.json();
+              if (data.ok) {
+                toast.success("Message sent successfully!");
+                resetForm();
+                onClose();
+              } else {
+                toast.error("Failed to send. Please try again.");
+              }
+            } catch {
+              toast.error("Network error. Please try again.");
+            } finally {
+              setSubmitting(false);
+            }
           }}
         >
           {({ errors, handleSubmit }) => (

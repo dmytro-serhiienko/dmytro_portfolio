@@ -9,6 +9,7 @@ import { Contacts } from "@/components/Sections/Contacts/Contacts";
 import { Footer } from "@/components/Sections/Footer/Footer";
 
 import { SmoothScroll } from "./ui/SmoothScroll/SmoothScroll";
+import { GsapAnimations } from "./ui/GsapAnimations/GsapAnimations";
 import { Toaster } from "sonner";
 
 const unbounded = localFont({
@@ -51,6 +52,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <SmoothScroll>
+          <GsapAnimations />
           <Header />
           <main className="flex-grow">{children}</main>
           <About />
