@@ -1,3 +1,15 @@
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   background: #ebe6dd;
   color: #000000;

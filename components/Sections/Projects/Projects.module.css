@@ -1,5 +1,8 @@
 .projectsSection {
   padding: 80px 20px;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
 .sectionTitle {
@@ -126,6 +129,31 @@
 
   .projectCard:nth-child(odd) {
     margin-top: 0;
+  }
+}
+
+.projectsSection {
+  scroll-margin-top: 90px;
+}
+
+@media (max-width: 600px) {
+  .projectsSection {
+    padding: 56px 16px;
+  }
+
+  .sectionTitle {
+    font-size: clamp(56px, 15vw, 130px);
+    margin-bottom: 24px;
+    line-height: 0.92;
+  }
+
+  .projectsGrid {
+    gap: 18px;
+  }
+
+  .imageWrapper {
+    height: clamp(210px, 62vw, 420px);
+    border-radius: 22px;
   }
 }
 
