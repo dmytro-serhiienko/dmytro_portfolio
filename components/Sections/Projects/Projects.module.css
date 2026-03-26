@@ -177,6 +177,33 @@
     background 0.2s ease;
 }
 
+.modalOverlay {
+  padding-left: max(18px, env(safe-area-inset-left));
+  padding-right: max(18px, env(safe-area-inset-right));
+  padding-top: max(18px, env(safe-area-inset-top));
+  padding-bottom: max(18px, env(safe-area-inset-bottom));
+}
+
+@media (max-width: 600px) {
+  .modalOverlay {
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+    padding-top: max(12px, env(safe-area-inset-top));
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .modalContent {
+    margin: 12px auto 16px;
+    padding: 64px 16px 18px;
+    border-radius: 22px;
+  }
+
+  .closeBtn {
+    top: 12px;
+    right: 12px;
+  }
+}
+
 .closeBtn:hover {
   transform: rotate(90deg) scale(1.02);
   background: rgba(0, 0, 0, 0.10);
