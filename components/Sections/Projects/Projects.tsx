@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import style from "./Projects.module.css";
 import SecretProject from "./ProjectsModal/SecretProject/SecretProject";
@@ -71,6 +71,10 @@ const projectsData = [
 
 export function Projects() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const closeBtnRef = useRef<HTMLButtonElement | null>(null);
+  const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
+
+  const projects = useMemo(() => projectsData, []);
 
   useEffect(() => {
     if (activeProject) {
@@ -83,16 +87,58 @@ export function Projects() {
     };
   }, [activeProject]);
 
+  useEffect(() => {
+    if (!activeProject) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActiveProject(null);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    closeBtnRef.current?.focus();
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [activeProject]);
+
+  useEffect(() => {
+    const nodes = cardRefs.current.filter(Boolean) as HTMLDivElement[];
+    if (!nodes.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          (entry.target as HTMLElement).classList.add(style.isVisible);
+          observer.unobserve(entry.target);
+        }
+      },
+      { root: null, threshold: 0.2, rootMargin: "80px 0px -10% 0px" }
+    );
+
+    for (const node of nodes) observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="projects" className={style.projectsSection}>
       <h2 className={style.sectionTitle}>Selected Projects</h2>
 
       <div className={style.projectsGrid}>
-        {projectsData.map((project) => (
+        {projects.map((project, idx) => (
           <div
             key={project.id}
-            className={style.projectCard}
+            ref={(el) => {
+              cardRefs.current[idx] = el;
+            }}
+            className={`${style.projectCard} ${style.reveal}`}
             onClick={() => setActiveProject(project)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setActiveProject(project);
+              }
+            }}
           >
             <div className={style.imageWrapper}>
               <Image
@@ -102,8 +148,8 @@ export function Projects() {
                 className={style.image}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className={style.overlay}>
-                <span>Open Project</span>
+              <div className={style.overlay} aria-hidden="true">
+                <span className={style.overlayLabel}>View</span>
               </div>
             </div>
             <div className={style.projectInfo}>
@@ -119,14 +165,22 @@ export function Projects() {
         <div
           className={style.modalOverlay}
           onClick={() => setActiveProject(null)}
+          role="presentation"
+          data-lenis-prevent
         >
           <div
             className={style.modalContent}
             onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${activeProject.title} details`}
+            data-lenis-prevent
           >
             <button
+              ref={closeBtnRef}
               className={style.closeBtn}
               onClick={() => setActiveProject(null)}
+              aria-label="Close project"
             >
               ×
             </button>
